@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5512ECBE20F9161100CBD244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512ECBD20F9161100CBD244 /* AppDelegate.swift */; };
-		5512ECC020F9161100CBD244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512ECBF20F9161100CBD244 /* ViewController.swift */; };
 		5512ECC320F9161100CBD244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5512ECC120F9161100CBD244 /* Main.storyboard */; };
 		5512ECC520F9161400CBD244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5512ECC420F9161400CBD244 /* Assets.xcassets */; };
 		5512ECC820F9161400CBD244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5512ECC620F9161400CBD244 /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 		1291F0E6C7F596FC83533E48 /* Pods-SwinjectExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectExample/Pods-SwinjectExample.release.xcconfig"; sourceTree = "<group>"; };
 		5512ECBA20F9161100CBD244 /* SwinjectExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwinjectExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5512ECBD20F9161100CBD244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5512ECBF20F9161100CBD244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5512ECC220F9161100CBD244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5512ECC420F9161400CBD244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5512ECC720F9161400CBD244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,10 +65,9 @@
 		5512ECBC20F9161100CBD244 /* SwinjectExample */ = {
 			isa = PBXGroup;
 			children = (
-				555047BC20F916C4004BD734 /* Extensions */,
+				555047BC20F916C4004BD734 /* Extension */,
 				555047BB20F916BE004BD734 /* Module */,
 				5512ECBD20F9161100CBD244 /* AppDelegate.swift */,
-				5512ECBF20F9161100CBD244 /* ViewController.swift */,
 				5512ECC120F9161100CBD244 /* Main.storyboard */,
 				5512ECC420F9161400CBD244 /* Assets.xcassets */,
 				5512ECC620F9161400CBD244 /* LaunchScreen.storyboard */,
@@ -88,12 +85,12 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
-		555047BC20F916C4004BD734 /* Extensions */ = {
+		555047BC20F916C4004BD734 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				555047BD20F916DE004BD734 /* SwinjectStoryboard+Injections.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		902B3D5BD1628DB24A964DFF /* Frameworks */ = {
@@ -147,6 +144,7 @@
 				TargetAttributes = {
 					5512ECB920F9161100CBD244 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -207,11 +205,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectExample/Pods-SwinjectExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
@@ -228,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				555047BE20F916DE004BD734 /* SwinjectStoryboard+Injections.swift in Sources */,
-				5512ECC020F9161100CBD244 /* ViewController.swift in Sources */,
 				555047C220F91728004BD734 /* TestViewModel.swift in Sources */,
 				555047C020F91702004BD734 /* TestViewController.swift in Sources */,
 				5512ECBE20F9161100CBD244 /* AppDelegate.swift in Sources */,
@@ -385,7 +388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bronnikov.SwinjectExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -404,7 +407,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bronnikov.SwinjectExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

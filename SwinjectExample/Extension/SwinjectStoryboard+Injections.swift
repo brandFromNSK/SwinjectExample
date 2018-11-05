@@ -19,6 +19,5 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(TestViewController.self) { (r, c) in
             c.viewModel = r.resolve(TestViewModel.self)
         }
-        
     }
 }

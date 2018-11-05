@@ -7,5 +7,6 @@ target 'SwinjectExample' do
 
 pod 'Swinject'
 pod 'SwinjectStoryboard'
+pod 'ReactiveCocoa'
 
 end
